@@ -1,0 +1,42 @@
+<!-- Team -->
+<div id="team" class="section md-padding">
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Section header -->
+      <div class="section-header text-center">
+        <h2 class="title">Notre equipe</h2>
+      </div>
+      <!-- /Section header -->
+
+      <!-- team -->
+      <div class="col-sm-4" *ngFor="let staff of staffs">
+        <div class="team">
+          <div class="team-img">
+            <div class="overlay">
+
+            </div>
+          </div>
+          <div class="team-content">
+            <img  style="height: 250px;" src="{{staff.picture}}">
+            <div><p> </p></div>
+            <h3>{{staff.name}}</h3>
+            <h3 style="font-size: 15px">{{staff.nick}}</h3>
+            <span>{{staff.skills?.name}}</span>
+          </div>
+        </div>
+      </div>
+      <!-- /team -->
+
+    </div>
+    <!-- /Row -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Team -->

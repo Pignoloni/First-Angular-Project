@@ -1,0 +1,70 @@
+
+
+  <header id="home">
+
+
+    <!-- Background Image -->
+    <div class="bg-img" style="background-image: url('assets/img/background2.jpg');">
+      <div class="overlay"></div>
+    </div>
+    <!-- /Background Image -->
+
+
+  <!-- home wrapper -->
+  <div class="home-wrapper">
+    <div class="container">
+      <div class="row">
+
+        <!-- home content -->
+        <div class="col-md-10 col-md-offset-1">
+          <div class="home-content">
+            <h1 class="white-text">Site realise avec Angular</h1>
+            <p class="white-text">Pendant ma deuxième année en développement web, j'ai conçu ce site avec Angular, témoignant de ma maîtrise croissante des compétences dans le domaine.</p>
+            <a routerLink="team" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><button class="white-btn">Team</button></a>
+            <a routerLink="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <button class="main-btn">Portfolio</button></a>
+          </div>
+        </div>
+        <!-- /home content -->
+
+      </div>
+    </div>
+  </div>
+  <!-- /home wrapper -->
+
+</header>
+
+
+<!-- About -->
+<div id="about" class="section md-padding">
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Section header -->
+      <div class="section-header text-center">
+        <h2 class="title">Mes compétences</h2>
+      </div>
+      <!-- /Section header -->
+
+      <!-- about -->
+      <div class="col-md-4" *ngFor="let service of services">
+        <div class="about">
+          <i class="fa fa-cogs"></i>
+          <h3>{{service.name}}</h3>
+          <p>{{service.description}}</p>
+          <a href="#">Read more</a>
+        </div>
+      </div>
+      <!-- /about -->
+
+    </div>
+    <!-- /Row -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /About -->

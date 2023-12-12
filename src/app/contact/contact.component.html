@@ -1,0 +1,100 @@
+<!-- Contact -->
+<div id="contact" class="section md-padding">
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Section-header -->
+      <div class="section-header text-center">
+        <h2 class="title">Nous contacter</h2>
+      </div>
+      <!-- /Section-header -->
+
+      <!-- contact -->
+      <div class="col-sm-4">
+        <div class="contact">
+          <i class="fa fa-phone"></i>
+          <h3>Phone</h3>
+          <p>512-421-3940</p>
+        </div>
+      </div>
+      <!-- /contact -->
+
+      <!-- contact -->
+      <div class="col-sm-4">
+        <div class="contact">
+          <i class="fa fa-envelope"></i>
+          <h3>Email</h3>
+          <p>email@support.com</p>
+        </div>
+      </div>
+      <!-- /contact -->
+
+      <!-- contact -->
+      <div class="col-sm-4">
+        <div class="contact">
+          <i class="fa fa-map-marker"></i>
+          <h3>Address</h3>
+          <p>1739 Bubby Drive</p>
+        </div>
+      </div>
+      <!-- /contact -->
+
+      <!-- contact form -->
+
+      <div class="col-md-8 col-md-offset-2">
+        <ng-container *ngIf="!messageSent">
+        <form *ngIf="form" [formGroup]="form" (ngSubmit)="sendContactMessage()" class="contact-form">
+
+          <input type="text" class="input" placeholder="Name">
+
+
+          <input formControlName="email" name="email" type="email" class="input" placeholder="Email">
+            <div *ngIf="form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched)">
+              <div class="invalid-feedback" *ngIf="form.controls.email.errors?.required">An email is required</div>
+              <div class="invalid-feedback" *ngIf="form.controls.email.errors?.email">Email is not valid</div>
+            </div>
+
+
+          <textarea formControlName="message" name="message" class="input" placeholder="Message"></textarea>
+          <div *ngIf="form.controls.message.invalid && (form.controls.message.dirty || form.controls.message.touched)">
+            <div class="invalid-feedback" *ngIf="form.controls.message.errors?.required">A mesage is required</div>
+            <div class="invalid-feedback" *ngIf="form.controls.message.errors?.minlength">Your message is too short.</div>
+          </div>
+          <button class="main-btn" [disabled]="form.invalid">Send message</button>
+
+
+        </form>
+      </ng-container>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 d-flex justify-content-center">
+              <div class="your-centered-div">
+                <div *ngIf="messageSent" id="submitSuccessMessage">
+                <div>
+                  <div> <p>     </p></div>
+                  <h1 style="color: #6195FF">Form Submission successful!</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      </div>
+
+      <!-- /contact form -->
+
+    </div>
+    <!-- /Row -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Contact -->
